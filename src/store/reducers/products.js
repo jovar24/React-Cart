@@ -1,4 +1,4 @@
-import { ADD_TO_CART } from "../actions/products";
+import { ADD_TO_CART, REMOVE_FROM_CART } from "../actions/products";
 import mockData from "../../mockData";
 
 const initialState = {
@@ -20,6 +20,16 @@ const productsReducer = (state = initialState, action) => {
           product => product.id !== action.productId
         ),
         total: state.total + addedItem.price
+      };
+    case REMOVE_FROM_CART:
+      const removedItem = state.cart.find(
+        product => product.id === action.productId
+      );
+      return {
+        ...state,
+        products: [...state.products, removedItem],
+        cart: state.cart.filter(product => product.id !== action.productId),
+        total: state.total - removedItem.price
       };
     default:
       return state;

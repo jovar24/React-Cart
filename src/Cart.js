@@ -15,6 +15,7 @@ const Cart = () => {
           name={product.name}
           price={product.price}
           description={product.description}
+          inCart
         />
       );
     });
