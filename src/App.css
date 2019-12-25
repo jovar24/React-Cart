@@ -1,6 +1,21 @@
+body {
+  margin: 0;
+}
 .App {
   font-family: sans-serif;
   text-align: center;
+  background-color: gainsboro;
+  height: 1000px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5rem;
+  padding: 10px;
+}
+a:hover {
+  letter-spacing: 3px;
 }
 
 .Item {

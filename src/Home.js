@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import Item from "./Item";
-import mockData from "./mockData";
 
 const Home = () => {
   const products = useSelector(state => state.products.products);
